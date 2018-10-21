@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import PageAction.CommonAction;
+
 public class SearchPageElement {
 	private static WebElement element,element1;
 	private static List<WebElement> element2;
@@ -53,21 +55,14 @@ public class SearchPageElement {
 		 return element;   
 		 }
 	
-	public static WebElement DesiredPlace(WebDriver driver){
+	public static WebElement DesiredPlace(WebDriver driver) throws Exception{
 		 //期望工作地   
-		 element = driver.findElement(By.xpath("//span[@class='el-cascader__label']"));       
+		Thread.sleep(1000);
+		 element = driver.findElement(By.id("expWork"));
 		 return element;   
 		 }
-	public static WebElement DesiredPlace1(WebDriver driver,int i){
-		 //期望工作地   
-		 element = driver.findElements(By.xpath("//ul[@class='el-cascader-menu']")).get(i);       
-		 return element;   
-		 }
-	public static WebElement DesiredPlace2(WebDriver driver,int i ){
-		 //期望工作地   
-		 element = driver.findElements(By.xpath("//ul[@class='el-cascader-menu']")).get(i);       
-		 return element;   
-		 }
+	
+	
 	
 	
 	public static WebElement TenureEnterprise(WebDriver driver){
@@ -86,11 +81,12 @@ public class SearchPageElement {
 		 element = driver.findElement(By.xpath("//*[@id='app']/div/div[2]/div/div[1]/div[2]/div[1]/div[5]/div[2]/div/input"));       
 		 return element;   
 		 }
-	public static List<WebElement> UpdateTime1(WebDriver driver) throws InterruptedException{
+	public static WebElement UpdateTime1(WebDriver driver) throws InterruptedException{
 		 //更新时间 1 
 		Thread.sleep(1000);
-		 element2 = driver.findElements(By.xpath("/html/body/div[2]/div[1]/div[1]/ul/li")); 
-		 return element2;   
+		String xPath = "/html/body/div[2]/div[1]/div[1]/ul/li[4]";
+		element = CommonAction.getSearchPageDialogElement(driver, xPath);
+		return element;
 		 }
 	public static WebElement Openbutton(WebDriver driver){
 		 //展开
@@ -169,7 +165,7 @@ public class SearchPageElement {
 	}
 	public static List<WebElement> age1(WebDriver driver) throws Exception{
 		 //年龄   
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		 element2 = driver.findElements(By.xpath("//div[@class='el-select-dropdown el-popper hide-drop-down-empty select-age']/div[1]/div[1]/ul/li"));    
 		 return element2;   
 	}
@@ -178,50 +174,46 @@ public class SearchPageElement {
 		 element = driver.findElement(By.xpath("//input[@placeholder='性别']"));       
 		 return element;   
 	}
-	public static List<WebElement> sex1(WebDriver driver){
+	public static WebElement sex1(WebDriver driver) throws Exception{
 		 //性别  
-		 element2 = driver.findElements(By.xpath("//div[@class='el-select-dropdown el-popper'and @x-placement='bottom-start' ]"));  
-		 return element2;   
+		Thread.sleep(1000);
+		// element = driver.findElement(By.xpath("//div[@class='el-select-dropdown el-popper'and @x-placement='bottom-start' ]/div/div/ul/li[2]"));
+		//div[@class='el-select-dropdown el-popper'and @x-placement='bottom-start' ]/div/div/ul/li[2]
+		element=CommonAction.getSearchPageDialogElement(driver, "/html/body/div[2]/div[1]/div[1]/ul/li[2]");
+		 
+		return element;   
 	}
+	
+	
 		
 	public static WebElement Place(WebDriver driver){
 		 //居住地   
-		 element = driver.findElement(By.xpath("//input[@placeholder='现居地']"));       
+		 element = driver.findElement(By.id("nowPlace"));       
 		 return element;   
 	}
-	public static List<WebElement> Place2(WebDriver driver){
-		 //居住地   
-		 element2 = driver.findElements(By.xpath(""));       
-		 return element2;   
-		
-	}
-	
-	
+
+	/**
+	 * 户口
+	 */
 	public static WebElement Registered(WebDriver driver){
-		 //户口   
-		 element = driver.findElement(By.xpath("//*[@id='natP']/span")); 
+		    
+		 element = driver.findElement(By.id("nativePlace")); 
 		 return element;   
 	}
-	public static WebElement Registered1(WebDriver driver){
-		 //户口-省   
-		 element = driver.findElements(By.xpath("//*[@id='cascader-menu-9285']/li")).get(4); 
-		 return element;   
-	}
-	public static WebElement Registered2(WebDriver driver){
-		 //户口-市 
-		 element = driver.findElement(By.xpath("//*[@id='menu-1152-1-4']")); 
-		 return element;   
-	}
+	/**
+	 * 工作状态 
+	 */
 	public static WebElement Jobtatus1(WebDriver driver){
-		 //工作状态   
 		 element = driver.findElement(By.xpath("//input[@placeholder='求职状态']"));       
 		 return element;   
 	}
-	public static List<WebElement> Jobtatus2(WebDriver driver) throws Exception{
+	public static WebElement Jobtatus2(WebDriver driver) throws Exception{
 		 //工作状态-在职,不想换
 		Thread.sleep(2000);
-		 element2 = driver.findElements(By.xpath("/html/body/div[2]/div[1]/div[1]/ul/li")); 
-		 return element2;   
+		
+		element=CommonAction.getSearchPageDialogElement(driver,"/html/body/div[2]/div[1]/div[1]/ul/li");
+		// element2 = driver.findElements(By.xpath()); 
+		 return element;   
 	}
 	
 	public static WebElement School(WebDriver driver){

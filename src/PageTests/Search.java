@@ -25,6 +25,8 @@ public class Search {
 		public void runBeforClass() throws Exception {		  	
 		 // 
 		    driver = new FirefoxDriver();
+//		  System.setProperty("webdriver.chrome.driver","E:\\webDriver\\chromedriverV2.28.exe");//chromedriver服务地址
+//	        WebDriver driver =new ChromeDriver(); //新建一个WebDriver 的对象，但是new 的是FirefoxDriver的驱动
 		    baseUrl = "http://web.ailiegou.com/"; 
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    driver.get(baseUrl);
@@ -37,7 +39,7 @@ public class Search {
 	      Thread.sleep(1000);
 		  LoginAction la = new LoginAction(driver);
 	      //输入用户名、密码
-	      la.Login("tangboanan@qq.com", "123456"); 
+	      la.Login("2015069736@qq.com", "123456"); 
 	       Thread.sleep(2000);
 	      SearchPageAction.Searchitem(driver,2,3,"健客");
 	      SearchPageAction.SearchExpansion(driver, 3, 4, 3, 4, 1);

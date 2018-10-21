@@ -2,7 +2,6 @@ package PageAction;
 
 import org.openqa.selenium.WebDriver;
 
-import PageElement.LoginElement;
 import PageElement.SearchPageElement;
 
 public class SearchPageAction {
@@ -16,19 +15,18 @@ public class SearchPageAction {
 	public static void Searchitem(WebDriver driver,int i,int j,String tenure) throws Exception 
 	{       
 		SearchPageElement.SearchList(driver).click();
-		SearchPageElement.Keyword(driver).sendKeys("java C++");
-		SearchPageElement.Anyey(driver).click();
-		SearchPageElement.IntentionalProfession(driver).click();
-		SearchPageElement.IntentionalProfession1(driver).click();
-		SearchPageElement.IntentionalProfession2(driver).click();
-		//工作地
-		//不管
-//		SearchPageElement.DesiredPlace(driver).click();
-//		SearchPageElement.DesiredPlace1(driver, i).click();
-//		SearchPageElement.DesiredPlace2(driver, j).click();
+//		SearchPageElement.Keyword(driver).sendKeys("java C++");
+//		SearchPageElement.Anyey(driver).click();
+//		SearchPageElement.IntentionalProfession(driver).click();
+//		SearchPageElement.IntentionalProfession1(driver).click();
+//		SearchPageElement.IntentionalProfession2(driver).click();
+//		//工作地
+//		//不管
+		SearchPageElement.DesiredPlace(driver).click();
+		CommonAction.clickProvinceAndcity(driver, i, j);
 //		SearchPageElement.TenureEnterprise(driver).sendKeys(tenure);
-		SearchPageElement.UpdateTime(driver).click();
-		SearchPageElement.UpdateTime1(driver).get(4).click();
+//		SearchPageElement.UpdateTime(driver).click();
+//		SearchPageElement.UpdateTime1(driver).click();
 			
 	}
 	public static void SearchExpansion(WebDriver driver,int i,int j,int k,int l,int m) throws Exception 
@@ -42,22 +40,28 @@ public class SearchPageAction {
 		SearchPageElement.IndustryRecent(driver).click();
 		
 		SearchPageElement.experience(driver).get(k).click();
-		//div[@class='show-industry-md-ri']
 		SearchPageElement.Education(driver).get(l).click();
 		SearchPageElement.SalaryExpectation(driver).get(m).click();
 	}
 	public static void SearchOther(WebDriver driver,int i,int j,int k,String school,String majar) throws Exception 
 	{
 		//展开
-		SearchPageElement.age(driver).click();
-		SearchPageElement.age1(driver).get(i).click();
-		SearchPageElement.sex(driver).click();
-		SearchPageElement.sex1(driver).get(j).click();
+//		SearchPageElement.age(driver).click();
+//		SearchPageElement.age1(driver).get(i).click();
+//		
+//		SearchPageElement.sex(driver).click();	
+//		SearchPageElement.sex1(driver).click();
+		SearchPageElement.Place(driver).click();
+		CommonAction.clickProvinceAndcity(driver, i, j);
 		
 		SearchPageElement.Jobtatus1(driver).click();
-		SearchPageElement.Jobtatus2(driver).get(k).click();
-		SearchPageElement.School(driver).sendKeys(school);
-		SearchPageElement.major(driver).sendKeys(majar);
+		SearchPageElement.Jobtatus2(driver).click();
+//		Thread.sleep(2000);
+		SearchPageElement.Registered(driver).click();
+		CommonAction.clickProvinceAndcity(driver, i, j);
+		
+//		SearchPageElement.School(driver).sendKeys(school);
+//		SearchPageElement.major(driver).sendKeys(majar);
 	}
 	
 }
