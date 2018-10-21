@@ -2,9 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="/WebDriverTestFrameWork/libs/jxl.jar"/>
-	<classpathentry kind="lib" path="/WebDriverTestFrameWork/libs/log4j-api-2.5.jar"/>
-	<classpathentry kind="lib" path="/WebDriverTestFrameWork/libs/log4j-core-2.5.jar"/>
-	<classpathentry kind="lib" path="/test1/lib/selenium-server-standalone-2.53.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="libs/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="libs/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="libs/jxl.jar"/>
+	<classpathentry kind="lib" path="libs/log4j-api-2.5.jar"/>
+	<classpathentry kind="lib" path="libs/log4j-core-2.5.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-java-2.53.0.jar"/>
+	<classpathentry kind="lib" path="libs/testng-6.9.9.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-server-standalone-2.53.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
